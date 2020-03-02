@@ -1,0 +1,66 @@
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  background-color: #ADD8E6;
+  padding: 15px;
+}
+</style>
+    <link type="text/css" rel="stylesheet" href="css/common.css"/>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+	
+    <script>
+        $(function() {
+            $.getJSON('Twitter.json', function(data) {
+                var tr;
+                for (var i = 0; i < data.length; i++) {
+                    tr = $('<tr/>');
+                    tr.append("<td>" + data[i][0] + "</td>");
+                    tr.append("<td>" + data[i][1] + "</td>");
+					tr.append("<td>" + data[i][2] + "</td>");
+					tr.append("<td>" + data[i][3] + "</td>");
+					tr.append("<td>" + data[i][4] + "</td>");
+					//tr.append("<td>" + data[i][5] + "</td>");
+					//tr.append("<td>" + data[i][6] + "</td>");
+					//tr.append("<td>" + data[i][7] + "</td>");
+                    $('table').append(tr);
+                }
+            });
+        });
+    </script>
+	
+	<script>
+        function goPython(){
+            $.ajax({
+              url: "Tweepy.py",
+             context: document.body
+            }).done(function() {
+             alert('finished python script');;
+            });
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <th> Tweets </th>
+			<th> Source </th>
+			<th> Likes </th>
+			<th> Retweets </th>
+			<th> Sentiment </th>
+			
+        </tr>
+    </table>
+	
+	
+	 <input type="button" id='script' name="scriptbutton" value=" Run Script " onclick="goPython()">
+	
+</body>
+
+
+
+
+
+
