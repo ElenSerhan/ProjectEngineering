@@ -2,7 +2,7 @@
 # Alan Serhan
 # g00349187@gmit.ie
 # https://github.com/ElenSerhan/ProjectEngineering/
-""" 
+"""
 This example uses matplotlib to plot a graph of the analysis percentages.
 """
 
@@ -33,11 +33,12 @@ negative = 0
 neutral = 0
 polarity = 0
 
+#function for analysing the tweet in textblob
 for tweet in tweets:
-    #print(tweet.text)
     analysis = TextBlob(tweet.text)
     polarity += analysis.sentiment.polarity
 
+    '''I Add a value to the variable and assign the result to that variable.'''
     if(analysis.sentiment.polarity == 0):
         neutral += 1
     elif(analysis.sentiment.polarity < 0.00):
@@ -45,11 +46,13 @@ for tweet in tweets:
     elif(analysis.sentiment.polarity > 0.00):
         positive += 1
 
+''' I assign the variable its sentiment depending on what the percentage is'''
 positive = percentage(positive, noOfSearchTerms)
 negative = percentage(negative, noOfSearchTerms)
 neutral = percentage(neutral, noOfSearchTerms)
 polarity = percentage(polarity, noOfSearchTerms)
 
+''' chart format splitting my three sentiments'''
 positive = format(positive, '.2f')
 negative = format(negative, '.2f')
 neutral = format(neutral, '.2f')
@@ -72,3 +75,4 @@ plt.title("What we think user " + searchTerm + " is like by analysing " + str(no
 plt.axis('equal')
 plt.tight_layout()
 plt.show()
+plt.pie
