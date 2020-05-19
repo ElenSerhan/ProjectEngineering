@@ -1,4 +1,4 @@
-<h1 align="center" ><br>Final Year Project<br></h1>
+<h1 align="center" ><br>Final Year Software Project<br></h1>
 
 <br>
 
@@ -11,4 +11,4 @@ Supervisor: Brian O’ Shea<br>
 </h4>
 <br>
 <br>
-TweetCreep is a Twitter-based Sentiment Analyser app, in this github, I have included different examples to run sentiment analysers. To use, make sure you have the correct tweet credentials, and that you have the libraries installed in your Python IDE, then run the code!.
+TweetCreep is a Twitter-based Sentiment Analyser app, in this github, I have included different examples to run sentiment analysers. To use, make sure you have the correct tweet credentials, and that you have the libraries installed in your Python IDE, then run the code!
